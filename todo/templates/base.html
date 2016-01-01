@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{{ app.config['SITE_NAME'] }}</title>
+<link href="{{ url_for('static', filename='styles/reset.css') }}" rel="stylesheet" type="text/css" />
+<link href="{{ url_for('static',filename='styles/index/style.css') }}" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<div class="page">
+    <div class="header box">
+        <h1><a href="/">{{ app.config['SITE_NAME'] }}</a></h1>
+    </div>
+
+    <div class="main box">
+		{% block main %}{% endblock %}
+	</div>
+    <div class="foot">
+        Copyright&copy; {{ app.config['SITE_NAME'] }}
+        作者 <a href="http://simple-is-better.com/">Python.cn(news, jobs)</a>
+        &nbsp;
+        <a href="http://webpy.org/" target="_blank"><img src="{{ url_for('static',filename='images/webpy_ss.png') }}" alt="powered by web.py" /></a>
+    </div>
+
+</div>
+</body>
+</html>
